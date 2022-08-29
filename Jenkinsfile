@@ -14,19 +14,19 @@ pipeline {
     stages {
         stage('Validate') {
             steps {
-                sh "sudo ./gradlew clean"
+                sh "./gradlew clean"
             }
         }
         stage('Build') {
             steps {
-                sh "sudo ./gradlew build"
-                sh "sudo ./gradlew assemble"
+                sh "./gradlew build"
+                sh "./gradlew assemble"
 
             }
         }
         stage('Test') {
             steps {
-                sh "sudo ./gradlew test"
+                sh "./gradlew test"
             }
             post{
                 always{
@@ -47,7 +47,7 @@ pipeline {
         //}
         stage('Package') {
             steps {
-                sh "sudo ./gradlew jar"
+                sh "./gradlew jar"
             }
             post{
                 success{
