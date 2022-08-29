@@ -29,11 +29,11 @@ pipeline {
             steps {
                 sh "./gradlew test"
             }
-            post{
-                always{
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                }
-            }
+            //post{
+            //    always{
+            //        junit '**/target/surefire-reports/TEST-*.xml'
+            //    }
+            //}
         }
 
         //stage('Quality Scan'){
